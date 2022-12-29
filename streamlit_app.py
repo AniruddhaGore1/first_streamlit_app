@@ -1,7 +1,6 @@
-import streamlit as st
+import streamlit
 
-st.title("🎉Happy New year!🎉")
-st.header("Welcome to year 2023")
-st.text("This is yet another year.")
-st.text("We thought, COVID is over.🦠 There are traces of it out there.")
-st.text("Be careful! Be Safe! 😷Wear mask!")
+streamlit.header('Breakfast Menu')
+streamlit.text('Omega 3 & Blueberry Oatmeal')
+streamlit.text('Kale, Spinach & Rocket Smoothie')
+streamlit.text('Hard-Boiled Free-Range Egg')
