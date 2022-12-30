@@ -2,8 +2,6 @@ import streamlit
 import pandas as pd
 my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
-
-
 streamlit.header('Breakfast Menu')
 streamlit.text('🥣Omega 3 & Blueberry Oatmeal')
 streamlit.text('🥗Kale, Spinach & Rocket Smoothie')
@@ -21,7 +19,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 streamlit.dataframe(fruits_to_show)
 
-
+#########################################################################
 import requests
 streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
@@ -34,3 +32,8 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_ch
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # writes to into dataframe
 streamlit.dataframe(fruityvice_normalized)
+
+
+
+#########################################
+import snowflake.connector
