@@ -32,10 +32,7 @@ try:
     streamlit.write('The user entered ', fruit_choice)
   else:
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_choice)
-    #streamlit.text(fruityvice_response.json())
-    # normalize the json version of the data
     fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
-    # writes to into dataframe
     streamlit.dataframe(fruityvice_normalized)
 except URLError as e:
   streamlit.error()
